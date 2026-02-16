@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
-import { CheckCircle2, AlertCircle, Clock, Globe, Shield, Zap, Activity, Info, Mail } from "lucide-react"
+import { CheckCircle2, Clock, Globe, Shield, Activity, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
   Dialog,
@@ -32,9 +32,14 @@ interface ApiResponse {
 }
 
 export function StatusContent({ initialData }: { initialData: ApiResponse | null }) {
+  const [mounted, setMounted] = React.useState(false)
   const [email, setEmail] = React.useState("")
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -97,7 +102,7 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
                 {isAllOperational ? "All Systems Operational" : "Partial System Outage"}
               </h1>
               <p className="text-white/80 font-medium">
-                Verified at {new Date().toLocaleTimeString()} • Updates every 60 seconds
+                Verified at {mounted ? new Date().toLocaleTimeString() : "--:--:--"} • Updates every 60 seconds
               </p>
             </div>
 

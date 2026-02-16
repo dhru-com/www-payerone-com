@@ -7,7 +7,6 @@ import {
   ShoppingBag,
   ArrowRightLeft,
   MapPin,
-  Wallet,
   Network,
   Link as LinkIcon,
   Key,
@@ -17,16 +16,10 @@ import {
   Settings,
   HelpCircle,
   Sun,
-  Shield,
-  Search,
   ChevronRight,
   MoreVertical,
-  ArrowUpRight,
-  TrendingUp,
-  Calendar,
-  ChevronDown
+  TrendingUp
 } from "lucide-react"
-import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 export function DashboardMockup() {

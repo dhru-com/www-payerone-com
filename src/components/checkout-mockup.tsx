@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
-import { ShieldCheck, Clock, CreditCard, Wallet, ArrowLeft, Info, ChevronRight, Copy, ChevronDown, QrCode, CheckCircle2, Zap } from "lucide-react"
+import { ShieldCheck, Clock, CreditCard, ArrowLeft, Info, ChevronRight, Copy, ChevronDown, QrCode, CheckCircle2, Zap } from "lucide-react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 

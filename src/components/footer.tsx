@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-import { Linkedin, Send } from "lucide-react"
+import { Send } from "lucide-react"
 
 const footerLinks = {
   products: [

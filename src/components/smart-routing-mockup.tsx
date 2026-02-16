@@ -4,9 +4,6 @@ import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import {
-  GitBranch,
-  Settings,
-  ShieldCheck,
   Globe,
   Clock,
   ChevronRight,
@@ -22,6 +19,7 @@ import {
   DollarSign,
   ChevronDown
 } from "lucide-react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 export function SmartRoutingMockup() {
@@ -172,8 +170,8 @@ export function SmartRoutingMockup() {
                   ].map((g) => (
                     <div key={g.name} className="p-4 rounded-xl border dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 flex items-center justify-between group cursor-pointer hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors">
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-white dark:bg-zinc-800 border dark:border-zinc-700 flex items-center justify-center p-2 shadow-sm">
-                          <img src={g.logo} alt="" className="w-full h-full object-contain" />
+                        <div className="w-10 h-10 rounded-lg bg-white dark:bg-zinc-800 border dark:border-zinc-700 flex items-center justify-center p-2 shadow-sm relative">
+                          <Image src={g.logo} alt="" fill className="object-contain p-2" />
                         </div>
                         <div>
                           <div className="text-sm font-bold tracking-tight">{g.name}</div>

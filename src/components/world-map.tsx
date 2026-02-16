@@ -1,13 +1,12 @@
 "use client"
 
-import React, { useMemo } from "react"
+import React, { useId } from "react"
 import { motion } from "framer-motion"
 import {
   ComposableMap,
   Geographies,
   Geography,
   Marker,
-  Line
 } from "react-simple-maps"
 import { cn } from "@/lib/utils"
 
@@ -48,12 +47,12 @@ interface TransactionArcProps {
   end: [number, number]
   delay?: number
   duration?: number
-  projection: any
+  projection: (coords: [number, number]) => [number, number] | null
   isBackground?: boolean
 }
 
 const TransactionArc = ({ start, end, delay = 0, duration = 3, projection, isBackground = false }: TransactionArcProps) => {
-  const id = useMemo(() => Math.random().toString(36).substr(2, 9), [])
+  const id = useId()
 
   const startPos = projection(start)
   const endPos = projection(end)
@@ -110,6 +109,23 @@ interface WorldMapProps {
 }
 
 export function WorldMap({ isBackground = false }: WorldMapProps) {
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className={cn(
+        "relative w-full select-none overflow-hidden",
+        isBackground
+          ? "h-full opacity-0"
+          : "aspect-[2/1] rounded-xl border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-900/20"
+      )} />
+    )
+  }
+
   return (
     <div className={cn(
       "relative w-full select-none overflow-hidden",

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { WorldMap } from "@/components/world-map"
-import { Globe, Zap, Shield, ArrowUpRight } from "lucide-react"
+import { Globe, Zap, Shield } from "lucide-react"
 
 export function GlobalNetwork() {
   return (

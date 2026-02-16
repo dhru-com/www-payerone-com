@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
 import { WalletMockup } from "@/components/wallet-mockup"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, Zap } from "lucide-react"

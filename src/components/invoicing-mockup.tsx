@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FileText, Download, Send, CreditCard, Wallet, CheckCircle2, MoreVertical, Plus, Zap } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Download, Send, CreditCard, Wallet, CheckCircle2, MoreVertical, Plus, Zap } from "lucide-react"
 
 export function InvoicingMockup() {
   const lineItems = [

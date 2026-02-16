@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ChevronRight, ShieldCheck, Zap, Lock, Globe, ArrowUpRight, CheckCircle2, Activity } from "lucide-react"
+import { motion } from "framer-motion"
+import { ChevronRight, ShieldCheck, Lock, Globe, ArrowUpRight, CheckCircle2, Activity } from "lucide-react"
 import { DashboardMockup } from "@/components/dashboard-mockup"
 import Image from "next/image"
 

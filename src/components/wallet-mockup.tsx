@@ -1,10 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
-import { Copy, ChevronDown, Info, ShieldCheck, CheckCircle2, Clock } from "lucide-react"
+import { Copy, ChevronDown, Info } from "lucide-react"
 import Image from "next/image"
-import { cn } from "@/lib/utils"
 
 export function WalletMockup() {
   return (

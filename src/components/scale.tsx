@@ -188,7 +188,7 @@ export function Scale() {
               </div>
             </div>
             <div className="flex flex-wrap justify-center md:justify-end -space-x-2 md:-space-x-3 p-2">
-              {supportedAssets.map((asset, i) => (
+              {supportedAssets.map((asset) => (
                 <div
                   key={asset.name}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-card bg-white dark:bg-zinc-800 flex items-center justify-center overflow-hidden shadow-sm relative z-10 hover:-translate-y-1 transition-transform cursor-pointer"

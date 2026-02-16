@@ -1,10 +1,16 @@
 "use client"
-
+import * as React from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Zap } from "lucide-react"
 
 export function AggregationMockup() {
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const gateways = [
     { name: "Stripe", logo: "/gateways/stripe.svg" },
     { name: "PayPal", logo: "/gateways/paypal.svg" },
@@ -35,9 +41,9 @@ export function AggregationMockup() {
       </motion.div>
 
       {/* Gateway Nodes */}
-      {gateways.map((gateway, i) => {
+      {mounted && gateways.map((gateway, i) => {
         const angle = (i / gateways.length) * (2 * Math.PI) - Math.PI / 2
-        const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 120 : 180
+        const radius = window.innerWidth < 768 ? 120 : 180
         const x = Math.cos(angle) * radius
         const y = Math.sin(angle) * radius
 

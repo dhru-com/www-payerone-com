@@ -1,6 +1,5 @@
 import { SmartRoutingHero } from "@/components/smart-routing-hero"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, GitBranch, Target, Zap, ShieldCheck, Activity, Scale, RefreshCw, ArrowDownWideNarrow, Globe, Check } from "lucide-react"
+import { Zap, ShieldCheck, Activity, Scale, RefreshCw, ArrowDownWideNarrow, Globe, Check } from "lucide-react"
 import { CTA } from "@/components/cta"
 import { Metadata } from "next"
 import { isAuthenticated } from "@/lib/auth"

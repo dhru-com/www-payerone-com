@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
-import { HelpCircle, Zap } from "lucide-react"
+import { Zap } from "lucide-react"
 
 export function PaymentLinkMockup() {
   return (
