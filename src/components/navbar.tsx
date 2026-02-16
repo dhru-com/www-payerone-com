@@ -120,7 +120,7 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
         <div className="flex items-center gap-12">
           <Link href="/" className="flex items-center space-x-2 group">
             <Image src="/logo.svg" alt="PayerOne Logo" width={36} height={36} className="h-9 w-9 rounded-md shadow-sm group-hover:scale-110 transition-transform duration-300" />
-            <span className="font-bold text-2xl tracking-tighter">PayerOne</span>
+            <span className="font-bold text-xl md:text-2xl tracking-tighter">PayerOne</span>
           </Link>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="gap-2">
@@ -167,20 +167,21 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex items-center gap-3 md:gap-6">
-          <ThemeToggle />
+        <div className="flex items-center gap-2 md:gap-6">
           {!isLoggedIn && (
             <Button asChild variant="ghost" size="lg" className="hidden md:flex text-base font-semibold">
               <a href="https://dashboard.payerone.com/login">Sign in</a>
             </Button>
           )}
 
-          <Button asChild size="lg" className="group h-11 px-6 rounded-full font-bold shadow-lg hover:shadow-primary/20 transition-all">
+          <Button asChild size="lg" className="group h-10 md:h-11 px-4 md:px-6 rounded-full font-bold shadow-lg hover:shadow-primary/20 transition-all text-xs md:text-base">
             <a href={isLoggedIn ? "https://dashboard.payerone.com/" : "https://account.dhru.com/register?for=payerone.com"}>
               {isLoggedIn ? "Dashboard" : "Start now"}
               <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
+
+          <ThemeToggle />
 
           <button
             className="md:hidden p-2 text-foreground"
@@ -245,13 +246,18 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
                 </Link>
               </div>
 
-              {!isLoggedIn && (
-                <div className="pt-4 space-y-4">
+              <div className="pt-4 space-y-4">
+                <Button asChild size="lg" className="w-full h-14 rounded-xl text-lg font-bold shadow-lg">
+                  <a href={isLoggedIn ? "https://dashboard.payerone.com/" : "https://account.dhru.com/register?for=payerone.com"}>
+                    {isLoggedIn ? "Dashboard" : "Start now"}
+                  </a>
+                </Button>
+                {!isLoggedIn && (
                   <Button asChild variant="outline" size="lg" className="w-full h-14 rounded-xl text-lg font-bold">
                     <a href="https://dashboard.payerone.com/login">Sign in</a>
                   </Button>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </motion.div>
         )}

@@ -75,7 +75,7 @@ export function Scale() {
   ]
 
   return (
-    <section ref={containerRef} className="py-32 bg-muted/30 border-y relative overflow-hidden">
+    <section ref={containerRef} className="py-32 bg-background relative overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]" />
@@ -83,8 +83,8 @@ export function Scale() {
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div style={{ opacity, scale }} className="max-w-6xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="flex justify-center mb-6">
+          <div className="text-center md:text-left mb-24 max-w-3xl mx-auto md:mx-0">
+            <div className="flex justify-center md:justify-start mb-6">
               <span className="px-4 py-1.5 text-[10px] font-bold text-primary bg-primary/10 rounded-full uppercase tracking-[0.2em] flex items-center gap-2">
                 <span className="w-4 h-[1px] bg-primary/30" />
                 02 Performance
@@ -94,7 +94,7 @@ export function Scale() {
             <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground mb-8">
               Built for <span className="text-primary italic">Infinite</span> Scale
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground">
               PayerOne is engineered to handle the demands of global enterprise commerce with zero latency and absolute reliability.
             </p>
           </div>

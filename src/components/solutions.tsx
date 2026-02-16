@@ -35,14 +35,14 @@ export function Solutions() {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center md:justify-start mb-6">
           <span className="px-4 py-1.5 text-[10px] font-bold text-primary bg-primary/10 rounded-full uppercase tracking-[0.2em] flex items-center gap-2">
             <span className="w-4 h-[1px] bg-primary/30" />
             04 Industry
             <span className="w-4 h-[1px] bg-primary/30" />
           </span>
         </div>
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0 mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

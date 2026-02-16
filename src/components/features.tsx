@@ -35,7 +35,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-24 bg-muted/30 border-y relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_100%)] opacity-[0.03] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">

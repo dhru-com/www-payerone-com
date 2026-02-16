@@ -49,9 +49,10 @@ interface TransactionArcProps {
   delay?: number
   duration?: number
   projection: any
+  isBackground?: boolean
 }
 
-const TransactionArc = ({ start, end, delay = 0, duration = 3, projection }: TransactionArcProps) => {
+const TransactionArc = ({ start, end, delay = 0, duration = 3, projection, isBackground = false }: TransactionArcProps) => {
   const id = useMemo(() => Math.random().toString(36).substr(2, 9), [])
 
   const startPos = projection(start)
@@ -69,7 +70,7 @@ const TransactionArc = ({ start, end, delay = 0, duration = 3, projection }: Tra
       <defs>
         <linearGradient id={`grad-${id}`} gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0" />
-          <stop offset="50%" stopColor="var(--color-primary)" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="var(--color-primary)" stopOpacity={isBackground ? "0.6" : "0.8"} />
           <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0" />
         </linearGradient>
       </defs>
@@ -78,8 +79,8 @@ const TransactionArc = ({ start, end, delay = 0, duration = 3, projection }: Tra
         d={d}
         fill="none"
         stroke="currentColor"
-        strokeWidth="0.5"
-        className="text-primary/10 dark:text-primary/5"
+        strokeWidth={isBackground ? "0.3" : "0.5"}
+        className="text-primary/20 dark:text-primary/10"
         initial={{ pathLength: 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ duration: 1.5, delay: delay * 0.5 }}
@@ -89,7 +90,7 @@ const TransactionArc = ({ start, end, delay = 0, duration = 3, projection }: Tra
         d={d}
         fill="none"
         stroke={`url(#grad-${id})`}
-        strokeWidth="1.5"
+        strokeWidth={isBackground ? "1.2" : "1.5"}
         strokeLinecap="round"
         initial={{ pathLength: 0.1, pathOffset: -0.1 }}
         animate={{ pathOffset: 1.1 }}
@@ -104,13 +105,22 @@ const TransactionArc = ({ start, end, delay = 0, duration = 3, projection }: Tra
   )
 }
 
-export function WorldMap() {
+interface WorldMapProps {
+  isBackground?: boolean
+}
+
+export function WorldMap({ isBackground = false }: WorldMapProps) {
   return (
-    <div className="relative w-full aspect-[2/1] select-none rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-900/20">
+    <div className={cn(
+      "relative w-full select-none overflow-hidden",
+      isBackground
+        ? "h-full opacity-70 grayscale-[0.2] dark:brightness-110"
+        : "aspect-[2/1] rounded-xl border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-900/20"
+    )}>
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 120,
+          scale: isBackground ? 220 : 120,
           center: [0, 0]
         }}
         width={800}
@@ -124,7 +134,7 @@ export function WorldMap() {
         </defs>
 
         {/* Map Background grid */}
-        <rect x="-1000" y="-1000" width="2000" height="2000" fill="url(#dotPattern)" className="text-zinc-100 dark:text-zinc-900" opacity="0.3" />
+        <rect x="-1000" y="-1000" width="2000" height="2000" fill="url(#dotPattern)" className={cn("text-zinc-100 dark:text-zinc-900", isBackground && "text-zinc-200 dark:text-zinc-700")} opacity={isBackground ? 0.4 : 0.3} />
 
         <Geographies geography={geoUrl}>
           {({ geographies, projection }) => (
@@ -137,7 +147,10 @@ export function WorldMap() {
                   fill="url(#dotPattern)"
                   stroke="currentColor"
                   strokeWidth="0.2"
-                  className="text-primary/20 dark:text-primary/10 stroke-primary/10 dark:stroke-primary/5 outline-none"
+                  className={cn(
+                    "text-primary/20 dark:text-primary/10 stroke-primary/10 dark:stroke-primary/5 outline-none",
+                    isBackground && "text-primary/40 dark:text-primary/30"
+                  )}
                   style={{
                     default: { outline: "none" },
                     hover: { outline: "none" },
@@ -159,6 +172,7 @@ export function WorldMap() {
                     delay={arc.delay}
                     duration={arc.duration}
                     projection={projection}
+                    isBackground={isBackground}
                   />
                 )
               })}
@@ -187,7 +201,7 @@ export function WorldMap() {
                 ease: "easeOut"
               }}
             />
-            <g className="hidden md:block">
+            <g className={cn("hidden md:block", isBackground && "hidden")}>
               <motion.text
                 y={10}
                 textAnchor="middle"
@@ -205,32 +219,34 @@ export function WorldMap() {
       </ComposableMap>
 
       {/* Stats Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Live Network Activity</span>
+      {!isBackground && (
+        <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Live Network Activity</span>
+            </div>
+            <div className="text-xl md:text-2xl font-black tracking-tighter tabular-nums">
+              <Counter value={12480} />
+              <span className="text-xs text-zinc-400 ml-1 font-bold">TPS Peak</span>
+            </div>
           </div>
-          <div className="text-xl md:text-2xl font-black tracking-tighter tabular-nums">
-            <Counter value={12480} />
-            <span className="text-xs text-zinc-400 ml-1 font-bold">TPS Peak</span>
-          </div>
-        </div>
 
-        <div className="hidden md:block text-right">
-          <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Edge Nodes Status</div>
-          <div className="flex items-center gap-1.5 justify-end">
-             <div className="flex -space-x-1">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-6 h-6 rounded-full border-2 border-white dark:border-zinc-900 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-                     <div className="w-1 h-1 rounded-full bg-green-500" />
-                  </div>
-                ))}
-             </div>
-             <span className="text-[10px] font-black text-primary uppercase ml-1">100% Online</span>
+          <div className="hidden md:block text-right">
+            <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Edge Nodes Status</div>
+            <div className="flex items-center gap-1.5 justify-end">
+               <div className="flex -space-x-1">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-6 h-6 rounded-full border-2 border-white dark:border-zinc-900 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+                       <div className="w-1 h-1 rounded-full bg-green-500" />
+                    </div>
+                  ))}
+               </div>
+               <span className="text-[10px] font-black text-primary uppercase ml-1">100% Online</span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
