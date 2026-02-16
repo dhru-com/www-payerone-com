@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 const plugins = [
@@ -67,10 +66,10 @@ export function Plugins() {
           </div>
           <div className="flex-shrink-0 flex justify-center md:justify-start">
             <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg font-semibold rounded-full group">
-              <Link href="/developers">
+              <a href="https://dashboard.payerone.com/developer/docs?tab=plugins" target="_blank" rel="noopener noreferrer">
                 View All Integrations
                 <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
