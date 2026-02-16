@@ -13,9 +13,9 @@ const footerLinks = {
     { name: "Express Wallet", href: "/products/wallet" },
   ],
   developers: [
-    { name: "Documentation", href: "/developers" },
-    { name: "API Reference", href: "/developers" },
-    { name: "Webhooks", href: "/developers" },
+    { name: "Documentation", href: "/developer" },
+    { name: "API Reference", href: "https://dashboard.payerone.com/developer/docs/api" },
+    { name: "Webhooks", href: "https://dashboard.payerone.com/developer/docs/webhooks" },
     { name: "Status", href: "/status" },
   ],
   company: [

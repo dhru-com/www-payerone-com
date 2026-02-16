@@ -50,7 +50,7 @@ export function CheckoutHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Button asChild size="lg" className="h-14 px-10 text-lg font-semibold rounded-full shadow-lg hover:shadow-primary/20 transition-all">
-              <a href={isLoggedIn ? "https://dashboard.payerone.com/developer/docs" : "https://account.dhru.com/register?for=payerone.com"}>
+              <a href={isLoggedIn ? "https://dashboard.payerone.com/developer/docs/api" : "https://account.dhru.com/register?for=payerone.com"}>
                 {isLoggedIn ? "Start Integration" : "Start Integrating"}
                 <ChevronRight className="ml-1 h-5 w-5" />
               </a>

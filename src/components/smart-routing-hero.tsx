@@ -55,7 +55,7 @@ export function SmartRoutingHero({ isLoggedIn = false }: { isLoggedIn?: boolean 
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-14 px-10 text-lg font-bold rounded-full">
-              <Link href="/developers">
+              <Link href="/developer">
                 View Docs
               </Link>
             </Button>

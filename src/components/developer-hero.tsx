@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, Code2, Terminal, Cpu } from "lucide-react"
 
-export function DevelopersHero() {
+export function DeveloperHero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       {/* Premium Background Pattern */}
@@ -50,14 +50,14 @@ export function DevelopersHero() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Button asChild size="lg" className="h-14 px-10 text-lg font-semibold rounded-full shadow-lg hover:shadow-primary/20 transition-all">
-              <Link href="https://dashboard.payerone.com/developer/docs">
+              <Link href="https://dashboard.payerone.com/developer/docs/api">
                 Quickstart Guide
                 <ChevronRight className="ml-1 h-5 w-5" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full">
-              <Link href="https://dashboard.payerone.com/developer/docs?tab=simulator">
-                Explore API Reference
+              <Link href="https://dashboard.payerone.com/">
+                Go to Dashboard
               </Link>
             </Button>
           </motion.div>

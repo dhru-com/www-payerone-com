@@ -56,7 +56,7 @@ export function AggregationHero({ isLoggedIn = false }: { isLoggedIn?: boolean }
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full">
-              <Link href="/developers">
+              <Link href="/developer">
                 View API Docs
               </Link>
             </Button>

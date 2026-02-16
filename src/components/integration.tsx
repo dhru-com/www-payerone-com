@@ -139,7 +139,7 @@ createOrder();`,
               ))}
             </div>
             <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg font-semibold rounded-full group">
-              <Link href="/developers">
+              <Link href="/developer">
                 Explore API Docs
                 <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>

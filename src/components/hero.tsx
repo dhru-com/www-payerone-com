@@ -67,7 +67,7 @@ export function Hero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base font-bold rounded-xl backdrop-blur-sm hover:bg-secondary/80 transition-all">
-                <Link href="/developers">
+                <Link href="/developer">
                   Explore Documentation
                 </Link>
               </Button>

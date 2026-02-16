@@ -159,7 +159,7 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-base font-medium")}>
-                  <Link href="/developers">
+                  <Link href="/developer">
                     Developers
                   </Link>
                 </NavigationMenuLink>
@@ -238,7 +238,7 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
                   Pricing
                 </Link>
                 <Link
-                  href="/developers"
+                  href="/developer"
                   className="block text-lg font-bold hover:text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >

@@ -57,7 +57,7 @@ export function WalletHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full">
-                <a href={isLoggedIn ? "https://dashboard.payerone.com/developer/docs#express-wallet" : "/developers"}>
+                <a href={isLoggedIn ? "https://dashboard.payerone.com/developer/docs/api#express-wallet" : "/developer"}>
                   View API Docs
                 </a>
               </Button>
