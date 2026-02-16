@@ -101,7 +101,7 @@ export function Scale() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Visual: Performance Dashboard */}
-            <div className="lg:col-span-2 rounded-[2.5rem] border bg-card/50 backdrop-blur-xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
+            <div className="lg:col-span-2 rounded-2xl border bg-card/50 backdrop-blur-xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
                 <Activity className="h-24 w-24 text-primary" />
               </div>
@@ -123,7 +123,7 @@ export function Scale() {
                 </div>
 
                 {/* Simulated "Scaling" Visualization */}
-                <div className="h-48 w-full bg-secondary/30 rounded-3xl border relative overflow-hidden p-6">
+                <div className="h-48 w-full bg-secondary/30 rounded-xl border relative overflow-hidden p-6">
                   <div className="flex items-end justify-between h-full gap-2">
                     {bars.map((bar, i) => (
                       <motion.div
@@ -152,7 +152,7 @@ export function Scale() {
 
             {/* Side Content: Reliability Features */}
             <div className="space-y-6">
-              <div className="p-8 rounded-[2rem] border bg-secondary/10 flex flex-col justify-between h-full">
+              <div className="p-8 rounded-2xl border bg-secondary/10 flex flex-col justify-between h-full">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Enterprise Reliability</h3>
                   <p className="text-muted-foreground leading-relaxed mb-8">
@@ -177,21 +177,21 @@ export function Scale() {
           </div>
 
           {/* Bottom Bar: Global Reach */}
-          <div className="mt-8 p-8 rounded-[2rem] border bg-card flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-6">
-              <div className="p-4 rounded-2xl bg-primary/10">
-                <Globe className="h-8 w-8 text-primary" />
+          <div className="mt-8 p-6 md:p-8 rounded-2xl border bg-card flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+            <div className="flex items-center gap-4 md:gap-6">
+              <div className="p-3 md:p-4 rounded-2xl bg-primary/10 shrink-0">
+                <Globe className="h-6 w-6 md:h-8 md:w-8 text-primary" />
               </div>
               <div>
-                <div className="text-lg font-bold">Multi-Chain Settlement Engine</div>
-                <div className="text-sm text-muted-foreground">Direct integration with major blockchains and high-liquidity assets.</div>
+                <div className="text-base md:text-lg font-bold">Multi-Chain Settlement Engine</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Direct integration with major blockchains and high-liquidity assets.</div>
               </div>
             </div>
-            <div className="flex -space-x-3 overflow-hidden p-2">
+            <div className="flex flex-wrap justify-center md:justify-end -space-x-2 md:-space-x-3 p-2">
               {supportedAssets.map((asset, i) => (
                 <div
                   key={asset.name}
-                  className="w-12 h-12 rounded-full border-4 border-card bg-white flex items-center justify-center overflow-hidden shadow-sm relative z-10 hover:-translate-y-1 transition-transform cursor-pointer"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-card bg-white dark:bg-zinc-800 flex items-center justify-center overflow-hidden shadow-sm relative z-10 hover:-translate-y-1 transition-transform cursor-pointer"
                   title={asset.name}
                 >
                   <Image
@@ -199,11 +199,11 @@ export function Scale() {
                     alt={`${asset.name} logo`}
                     width={24}
                     height={24}
-                    className="object-contain"
+                    className="object-contain dark:invert dark:brightness-0 group-hover:dark:invert-0 group-hover:dark:brightness-100 transition-all"
                   />
                 </div>
               ))}
-              <div className="w-12 h-12 rounded-full border-4 border-card bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-bold shadow-lg relative z-20">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-card bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-bold shadow-lg relative z-20">
                 +20
               </div>
             </div>

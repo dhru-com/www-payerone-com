@@ -8,7 +8,7 @@ export function CheckoutCustomization({ isLoggedIn = false }: { isLoggedIn?: boo
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
              <div className="absolute -top-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px]" />
-             <div className="rounded-3xl border bg-card p-10 shadow-2xl relative z-10">
+             <div className="rounded-2xl border bg-card p-10 shadow-2xl relative z-10">
                 <h3 className="text-2xl font-bold mb-8 italic">Merchant Control</h3>
                 <div className="space-y-6">
                   {[
@@ -33,14 +33,14 @@ export function CheckoutCustomization({ isLoggedIn = false }: { isLoggedIn?: boo
              </div>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">
               Your Brand, <br /> Our Infrastructure.
             </h2>
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
               Don&apos;t settle for a generic payment experience. PayerOne allows you to fully customize the checkout look and feel to match your brand identity while we handle the complex blockchain logic.
             </p>
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6 mb-12 text-left">
                <div className="flex gap-4 p-4 rounded-2xl bg-background border hover:border-primary/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary flex-shrink-0">
                     <Layout className="h-6 w-6" />

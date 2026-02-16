@@ -49,15 +49,15 @@ export function Plugins() {
   return (
     <section className="py-24 bg-muted/50 border-y overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex justify-start mb-6">
+        <div className="flex justify-center md:justify-start mb-6">
           <span className="px-4 py-1.5 text-[10px] font-bold text-primary bg-primary/10 rounded-full uppercase tracking-[0.2em] flex items-center gap-2">
             <span className="w-4 h-[1px] bg-primary/30" />
-            04 Ecosystem
+            05 Ecosystem
             <span className="w-4 h-[1px] bg-primary/30" />
           </span>
         </div>
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
+          <div className="max-w-2xl mx-auto md:mx-0">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
               E-commerce Plugins <br /> & Apps
             </h2>
@@ -65,7 +65,7 @@ export function Plugins() {
               Connect PayerOne to your favorite platforms and start accepting Web3 payments without writing a single line of code.
             </p>
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex justify-center md:justify-start">
             <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg font-semibold rounded-full group">
               <Link href="/developers">
                 View All Integrations
@@ -104,7 +104,7 @@ export function Plugins() {
           ))}
         </div>
 
-        <div className="mt-20 p-8 rounded-[2rem] bg-secondary/30 border-2 border-dashed border-border flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div className="mt-20 p-8 rounded-2xl bg-secondary/30 border-2 border-dashed border-border flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div>
             <h3 className="text-xl font-bold text-foreground mb-2">Don&apos;t see your platform?</h3>
             <p className="text-muted-foreground">We&apos;re constantly building new integrations. Let us know what you need.</p>

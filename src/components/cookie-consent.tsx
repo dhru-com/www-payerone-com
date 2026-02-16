@@ -29,14 +29,14 @@ export function CookieConsent() {
           exit={{ opacity: 0, y: 50 }}
           className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-full max-w-2xl px-4"
         >
-          <div className="bg-card border border-border shadow-2xl rounded-[2rem] p-6 md:p-8 backdrop-blur-xl">
+          <div className="bg-card border border-border shadow-2xl rounded-2xl p-6 md:p-8 backdrop-blur-xl">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1 text-center md:text-left">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   We use cookies on our website to see how you interact with it. By accepting, you agree to our use of such cookies.{" "}
-                  <a 
-                    href="https://www.dhru.com/privacy-policy" 
-                    target="_blank" 
+                  <a
+                    href="https://www.dhru.com/privacy-policy"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary font-bold hover:underline"
                   >
@@ -45,13 +45,13 @@ export function CookieConsent() {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <Button 
+                <Button
                   onClick={acceptCookies}
                   className="rounded-full px-8 font-bold"
                 >
                   Accept
                 </Button>
-                <button 
+                <button
                   onClick={() => setIsVisible(false)}
                   className="p-2 text-muted-foreground hover:text-foreground transition-colors"
                 >

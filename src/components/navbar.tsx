@@ -27,6 +27,7 @@ import {
   X
 } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const productGroups = [
   {
@@ -36,31 +37,31 @@ const productGroups = [
         title: "Checkout",
         href: "/products/checkout",
         description: "Hosted crypto + multi-provider Checkout experience.",
-        icon: <ShoppingBag className="h-4 w-4" />,
+        icon: <ShoppingBag className="h-5 w-5" />,
       },
       {
         title: "Express Wallet",
         href: "/products/wallet",
         description: "Virtual deposit addresses for instant wallet top-ups without a full Checkout process.",
-        icon: <Wallet className="h-4 w-4" />,
+        icon: <Wallet className="h-5 w-5" />,
       },
       {
         title: "Payment Links",
         href: "/products/payment-links",
         description: "No-code payment collection.",
-        icon: <LinkIcon className="h-4 w-4" />,
+        icon: <LinkIcon className="h-5 w-5" />,
       },
       {
         title: "Invoices & Billing",
         href: "/products/invoicing",
         description: "One-time, recurring, subscriptions.",
-        icon: <FileText className="h-4 w-4" />,
+        icon: <FileText className="h-5 w-5" />,
       },
       {
         title: "Subscriptions",
         href: "/products/subscriptions",
         description: "Automated recurring billing engine.",
-        icon: <RefreshCw className="h-4 w-4" />,
+        icon: <RefreshCw className="h-5 w-5" />,
       },
     ],
   },
@@ -71,13 +72,13 @@ const productGroups = [
         title: "Gateway Aggregation",
         href: "/products/aggregation",
         description: "Connect Stripe, PayPal, Razorpay, etc.",
-        icon: <Network className="h-4 w-4" />,
+        icon: <Network className="h-5 w-5" />,
       },
       {
         title: "Smart Routing",
         href: "/products/smart-routing",
         description: "Automatically route payments to optimal provider.",
-        icon: <GitBranch className="h-4 w-4" />,
+        icon: <GitBranch className="h-5 w-5" />,
       },
     ],
   },
@@ -126,7 +127,7 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-base font-medium">Products</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-2 gap-3 p-6 md:w-[700px] lg:w-[800px] rounded-3xl">
+                  <div className="grid w-[600px] grid-cols-2 gap-3 p-6 md:w-[700px] lg:w-[800px] rounded-2xl">
                     {productGroups.map((group) => (
                       <div key={group.title} className="space-y-4">
                         <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary px-3">
@@ -166,7 +167,8 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
+          <ThemeToggle />
           {!isLoggedIn && (
             <Button asChild variant="ghost" size="lg" className="hidden md:flex text-base font-semibold">
               <a href="https://dashboard.payerone.com/login">Sign in</a>
@@ -213,7 +215,7 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
                         className="flex items-center gap-4 p-2 -ml-2 rounded-xl hover:bg-accent transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                           {item.icon}
                         </div>
                         <div>

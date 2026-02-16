@@ -43,11 +43,11 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
     setIsSubmitting(true)
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500))
-    
+
     toast.success("Subscribed successfully!", {
       description: "We'll notify you of any system updates or incidents."
     })
-    
+
     setIsSubmitting(false)
     setEmail("")
     setIsOpen(false)
@@ -82,7 +82,7 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className={cn(
-              "rounded-[2.5rem] p-10 md:p-12 mb-16 border shadow-2xl flex flex-col md:flex-row items-center gap-8 text-center md:text-left relative overflow-hidden",
+              "rounded-2xl p-10 md:p-12 mb-16 border shadow-2xl flex flex-col md:flex-row items-center gap-8 text-center md:text-left relative overflow-hidden",
               isAllOperational ? "bg-green-500 border-green-600/20" : "bg-amber-500 border-amber-600/20"
             )}
           >
@@ -104,11 +104,11 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
             <div className="shrink-0 relative z-10">
                <Dialog open={isOpen} onOpenChange={setIsOpen}>
                  <DialogTrigger asChild>
-                   <button className="px-6 py-3 rounded-full bg-white text-green-600 font-bold text-sm shadow-xl hover:scale-105 transition-transform">
+                   <button className="px-6 py-3 rounded-full bg-white dark:bg-zinc-900 text-green-600 dark:text-green-400 font-bold text-sm shadow-xl hover:scale-105 transition-transform">
                       Subscribe to Updates
                    </button>
                  </DialogTrigger>
-                 <DialogContent className="sm:max-w-md rounded-3xl">
+                 <DialogContent className="sm:max-w-md rounded-2xl">
                    <DialogHeader>
                      <DialogTitle className="text-2xl font-bold tracking-tight">Stay Informed</DialogTitle>
                      <DialogDescription className="text-base">
@@ -129,8 +129,8 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
                          />
                        </div>
                      </div>
-                     <Button 
-                       type="submit" 
+                     <Button
+                       type="submit"
                        className="w-full h-12 rounded-2xl font-bold text-base"
                        disabled={isSubmitting}
                      >
@@ -158,7 +158,7 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="p-6 rounded-3xl border bg-card hover:shadow-lg transition-all flex items-center justify-between group"
+                  className="p-6 rounded-2xl border bg-card hover:shadow-lg transition-all flex items-center justify-between group"
                 >
                   <div className="font-bold text-lg">{service.name}</div>
                   <div className="flex items-center gap-3">
@@ -185,13 +185,13 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="p-8 rounded-[2rem] border bg-card hover:shadow-xl transition-all space-y-6 group"
+                    className="p-8 rounded-2xl border bg-card hover:shadow-xl transition-all space-y-6 group"
                   >
                     <div className="flex items-center justify-between">
                       <div className="font-bold text-lg">{network.name}</div>
                       <div className={cn(
                         "px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest",
-                        network.status === "operational" ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"
+                        network.status === "operational" ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-500" : "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-500"
                       )}>
                         {network.status}
                       </div>
@@ -236,7 +236,7 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
                <div className="relative pl-8 border-l-2 border-muted">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-zinc-200 border-4 border-background" />
                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-[0.2em] mb-4">February 15, 2026</div>
-                  <div className="p-8 rounded-3xl bg-secondary/30 border space-y-4">
+                  <div className="p-8 rounded-2xl bg-secondary/30 border space-y-4">
                      <h3 className="font-bold text-lg">No incidents reported.</h3>
                      <p className="text-sm text-muted-foreground">All systems remained operational throughout the day.</p>
                   </div>
@@ -245,7 +245,7 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
                <div className="relative pl-8 border-l-2 border-muted">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-amber-500 border-4 border-background" />
                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-[0.2em] mb-4">February 10, 2026</div>
-                  <div className="p-8 rounded-3xl bg-amber-50/50 border border-amber-100 space-y-4">
+                  <div className="p-8 rounded-2xl bg-amber-50/50 border border-amber-100 space-y-4">
                      <h3 className="font-bold text-lg text-amber-900">Minor Network Congestion - BSC</h3>
                      <p className="text-sm text-amber-800/80 leading-relaxed">
                         <span className="font-bold">Resolved</span> - We observed delayed transaction confirmations on the Binance Smart Chain due to high network congestion. System automatically switched to secondary RPC nodes.
@@ -257,7 +257,7 @@ export function StatusContent({ initialData }: { initialData: ApiResponse | null
           </div>
 
           {/* Security & Reliability Footer */}
-          <div className="mt-24 p-10 rounded-[2.5rem] bg-zinc-900 text-white flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="mt-24 p-10 rounded-2xl bg-zinc-900 text-white flex flex-col md:flex-row items-center justify-between gap-10">
              <div className="flex items-center gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
                    <Shield className="h-8 w-8 text-white" />

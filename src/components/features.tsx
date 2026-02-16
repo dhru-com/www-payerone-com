@@ -37,17 +37,17 @@ export function Features() {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_100%)] opacity-[0.03] pointer-events-none" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-start mb-6">
+        <div className="flex justify-center md:justify-start mb-6">
           <span className="px-4 py-1.5 text-[10px] font-bold text-primary bg-primary/10 rounded-full uppercase tracking-[0.2em] flex items-center gap-2">
             <span className="w-4 h-[1px] bg-primary/30" />
             01 Crypto Gateway
             <span className="w-4 h-[1px] bg-primary/30" />
           </span>
         </div>
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
+          <div className="max-w-2xl mx-auto md:mx-0">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
               The Crypto Payment Gateway <br /> for Modern Business
             </h2>
@@ -55,7 +55,7 @@ export function Features() {
               PayerOne provides the pure non-custodial infrastructure needed to settle payments directly to your wallet.
             </p>
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex justify-center md:justify-start">
              <div className="px-4 py-2 rounded-full border bg-card text-sm font-semibold text-primary">
                 Multiple Networks Supported
              </div>
@@ -64,8 +64,8 @@ export function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
-            <div key={feature.title} className="group p-8 rounded-3xl border bg-card hover:bg-secondary/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+            <div key={feature.title} className="group p-8 rounded-2xl border bg-card hover:bg-secondary/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-4">{feature.title}</h3>

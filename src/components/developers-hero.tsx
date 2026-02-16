@@ -86,7 +86,7 @@ export function DevelopersHero() {
               icon: <Cpu className="h-6 w-6 text-primary" />,
             },
           ].map((feature, i) => (
-            <div key={i} className="p-8 rounded-[2rem] border bg-card/50 backdrop-blur-sm hover:bg-card transition-colors">
+            <div key={i} className="p-8 rounded-2xl border bg-card/50 backdrop-blur-sm hover:bg-card transition-colors">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 {feature.icon}
               </div>

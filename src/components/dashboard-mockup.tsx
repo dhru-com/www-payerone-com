@@ -31,9 +31,9 @@ import { cn } from "@/lib/utils"
 
 export function DashboardMockup() {
   return (
-    <div className="w-full h-full bg-zinc-50 flex overflow-hidden font-sans text-foreground select-none">
+    <div className="w-full h-full bg-zinc-50 dark:bg-zinc-950 flex overflow-hidden font-sans text-foreground select-none">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-zinc-100 bg-white flex flex-col hidden md:flex shrink-0">
+      <aside className="w-64 border-r border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col hidden md:flex shrink-0">
         <div className="p-6">
 
           <nav className="space-y-1 mt-5">
@@ -58,12 +58,12 @@ export function DashboardMockup() {
         </div>
 
         <div className="mt-auto p-4 space-y-4">
-          <div className="bg-zinc-50 rounded-xl p-4 border border-zinc-100 flex items-center justify-between">
+          <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-lg p-4 border border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
             <div>
               <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Wallet Balance</div>
               <div className="text-xs font-bold">$0.00</div>
             </div>
-            <button className="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center shadow-md">
+            <button className="w-8 h-8 rounded-md bg-black dark:bg-white dark:text-black text-white flex items-center justify-center shadow-md">
               <Plus className="h-4 w-4" />
             </button>
           </div>
@@ -73,14 +73,14 @@ export function DashboardMockup() {
             <SidebarItem icon={<HelpCircle className="h-4 w-4" />} label="Get Help" />
           </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-2xl hover:bg-zinc-50 transition-colors">
+          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
             <div className="w-10 h-10 rounded-full bg-zinc-200 flex items-center justify-center overflow-hidden font-bold text-xs">
               D
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-1.5">
                 <span className="text-xs font-bold truncate">My Account</span>
-                <span className="bg-zinc-100 text-zinc-500 text-[8px] font-black px-1.5 py-0.5 rounded-full">FREE</span>
+                <span className="bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 text-[8px] font-black px-1.5 py-0.5 rounded-full">FREE</span>
               </div>
               <div className="text-[10px] text-zinc-400 truncate">sam@payerone.com</div>
             </div>
@@ -92,9 +92,9 @@ export function DashboardMockup() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="h-16 border-b border-zinc-100 bg-white flex items-center justify-between px-8 shrink-0">
+        <header className="h-16 border-b border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center justify-between px-8 shrink-0">
           <div className="flex items-center gap-4">
-            <div className="p-2 hover:bg-zinc-50 rounded-lg cursor-pointer md:hidden">
+            <div className="p-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 rounded-md cursor-pointer md:hidden">
               <LayoutDashboard className="h-5 w-5 text-zinc-500" />
             </div>
             <span className="text-sm font-bold">Dashboard</span>
@@ -107,15 +107,15 @@ export function DashboardMockup() {
         </header>
 
         {/* Scrollable Area */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6">
           {/* Top Row: Chart & Stats */}
-          <div className="grid grid-cols-1 gap-8">
-            <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm p-8 space-y-6">
+          <div className="grid grid-cols-1 gap-4 md:gap-8">
+            <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-100 dark:border-zinc-800 shadow-sm p-4 md:p-8 space-y-4 md:space-y-6">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-1">Live Volume</div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold tracking-tighter">$1,240.00</span>
+                    <span className="text-2xl md:text-3xl font-bold tracking-tighter">$1,240.00</span>
                     <span className="text-[10px] font-bold text-green-500 flex items-center">
                       <TrendingUp className="h-2.5 w-2.5 mr-1" />
                       12.5%
@@ -125,7 +125,7 @@ export function DashboardMockup() {
               </div>
 
               {/* Line Chart Mockup */}
-              <div className="h-25 w-full relative">
+              <div className="h-32 md:h-48 w-full relative">
                 <svg className="w-full h-full" viewBox="0 0 800 200" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
@@ -175,31 +175,31 @@ export function DashboardMockup() {
           </div>
 
           {/* Orders Table */}
-          <div className="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden">
-            <div className="p-6 border-b flex items-center justify-between">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-100 dark:border-zinc-800 shadow-sm overflow-hidden">
+            <div className="p-4 md:p-6 border-b dark:border-zinc-800 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="h-10 px-4 rounded-xl bg-zinc-100 flex items-center gap-2 text-xs font-bold">
-                  <ShoppingBag className="h-4 w-4" />
+                <div className="h-9 md:h-10 px-3 md:px-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center gap-2 text-[10px] md:text-xs font-bold">
+                  <ShoppingBag className="h-3.5 w-3.5 md:h-4 md:w-4" />
                   Orders
                 </div>
-                <div className="h-10 px-4 rounded-xl hover:bg-zinc-50 flex items-center gap-2 text-xs font-bold text-zinc-400 cursor-pointer">
-                  <ArrowRightLeft className="h-4 w-4" />
+                <div className="h-9 md:h-10 px-3 md:px-4 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 flex items-center gap-2 text-[10px] md:text-xs font-bold text-zinc-400 cursor-pointer">
+                  <ArrowRightLeft className="h-3.5 w-3.5 md:h-4 md:w-4" />
                   Transactions
                 </div>
               </div>
-              <button className="h-10 px-4 rounded-xl hover:bg-zinc-50 flex items-center gap-2 text-xs font-bold text-zinc-500 transition-colors">
+              <button className="h-9 md:h-10 px-3 md:px-4 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 flex items-center gap-2 text-[10px] md:text-xs font-bold text-zinc-500 transition-colors">
                 View All
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
               </button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-zinc-50/50">
-                    <th className="px-6 py-4 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Order ID</th>
-                    <th className="px-6 py-4 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Status</th>
-                    <th className="px-6 py-4 text-[10px] font-bold text-zinc-400 uppercase tracking-widest text-right">Amount</th>
-                    <th className="px-6 py-4 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Date</th>
+                  <tr className="bg-zinc-50/50 dark:bg-zinc-800/50">
+                    <th className="px-4 md:px-6 py-3 md:py-4 text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Order ID</th>
+                    <th className="px-4 md:px-6 py-3 md:py-4 text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Status</th>
+                    <th className="px-4 md:px-6 py-3 md:py-4 text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest text-right">Amount</th>
+                    <th className="px-4 md:px-6 py-3 md:py-4 text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest hidden sm:table-cell">Date</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
@@ -234,8 +234,8 @@ export function DashboardMockup() {
 function SidebarItem({ icon, label, active = false }: { icon: React.ReactNode, label: string, active?: boolean }) {
   return (
     <div className={cn(
-      "flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium transition-all cursor-pointer",
-      active ? "bg-zinc-100 text-foreground" : "text-zinc-500 hover:bg-zinc-50 hover:text-foreground"
+      "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer",
+      active ? "bg-zinc-100 dark:bg-zinc-800 text-foreground" : "text-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-foreground"
     )}>
       {icon}
       <span>{label}</span>
@@ -245,18 +245,18 @@ function SidebarItem({ icon, label, active = false }: { icon: React.ReactNode, l
 
 function TableRowMockup({ id, status, amount, date }: { id: string, status: string, amount: string, date: string }) {
   return (
-    <tr className="hover:bg-zinc-50/50 transition-colors group cursor-pointer">
-      <td className="px-6 py-4 font-mono text-[10px] text-zinc-500">{id}</td>
-      <td className="px-6 py-4">
+    <tr className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/50 transition-colors group cursor-pointer">
+      <td className="px-4 md:px-6 py-3 md:py-4 font-mono text-[9px] md:text-[10px] text-zinc-500">{id}</td>
+      <td className="px-4 md:px-6 py-3 md:py-4">
         <span className={cn(
-          "text-[10px] font-bold px-2 py-0.5 rounded-full",
-          status === "Paid" ? "bg-black text-white" : "bg-zinc-100 text-zinc-500"
+          "text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-full",
+          status === "Paid" ? "bg-black dark:bg-white dark:text-black text-white" : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400"
         )}>
           {status}
         </span>
       </td>
-      <td className="px-6 py-4 text-right font-bold text-xs tracking-tight">{amount}</td>
-      <td className="px-6 py-4 text-[10px] font-medium text-zinc-400 whitespace-nowrap">{date}</td>
+      <td className="px-4 md:px-6 py-3 md:py-4 text-right font-bold text-[10px] md:text-xs tracking-tight">{amount}</td>
+      <td className="px-4 md:px-6 py-3 md:py-4 text-[9px] md:text-[10px] font-medium text-zinc-400 whitespace-nowrap hidden sm:table-cell">{date}</td>
     </tr>
   )
 }

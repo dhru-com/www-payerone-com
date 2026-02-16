@@ -108,7 +108,7 @@ export function DetailedPricing({ initialData, isLoggedIn = false }: { initialDa
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className={cn(
-                  "relative p-8 md:p-10 rounded-[2.5rem] border bg-card flex flex-col transition-all duration-500",
+                  "relative p-8 md:p-10 rounded-2xl border bg-card flex flex-col transition-all duration-500",
                   plan.popular ? "border-primary shadow-2xl scale-105 z-20" : "shadow-sm hover:shadow-xl hover:-translate-y-1"
                 )}
               >
@@ -181,7 +181,7 @@ export function DetailedPricing({ initialData, isLoggedIn = false }: { initialDa
             <p className="text-muted-foreground">We optimize every route to provide the lowest fixed fees per gateway.</p>
           </div>
 
-          <div className="rounded-[2.5rem] border bg-card/50 backdrop-blur-sm overflow-hidden shadow-sm">
+          <div className="rounded-2xl border bg-card/50 backdrop-blur-sm overflow-hidden shadow-sm">
             <div className="grid grid-cols-2 md:grid-cols-4 border-b bg-muted/30">
               <div className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground">Gateway</div>
               <div className="p-6 text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground">Free Plan</div>
@@ -193,7 +193,7 @@ export function DetailedPricing({ initialData, isLoggedIn = false }: { initialDa
             {["stripe", "paypal", "binance_pay", "binance_pay_c2c", "gate_io"].map((gw) => (
               <div key={gw} className="grid grid-cols-2 md:grid-cols-4 border-b last:border-0 hover:bg-secondary/20 transition-colors">
                 <div className="p-6 flex items-center gap-3">
-                   <div className="w-8 h-8 relative rounded-lg bg-white shadow-sm flex items-center justify-center p-1.5 overflow-hidden border">
+                   <div className="w-8 h-8 relative rounded-lg bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center p-1.5 overflow-hidden border dark:border-zinc-700">
                      {gw.includes('binance') ? (
                        <Image src="/logos/binance.svg" alt="Binance" fill className="object-contain p-1.5" />
                      ) : gw === 'gate_io' ? (
@@ -226,7 +226,7 @@ export function DetailedPricing({ initialData, isLoggedIn = false }: { initialDa
             ))}
           </div>
 
-          <div className="mt-12 text-center p-8 rounded-3xl bg-primary/5 border border-primary/10">
+          <div className="mt-12 text-center p-8 rounded-2xl bg-primary/5 border border-primary/10">
             <p className="text-sm text-muted-foreground italic leading-relaxed">
               * Fixed transaction fees are charged per successful payment. No percentages are taken from your transaction volume on any plan.
               <br />
@@ -303,7 +303,7 @@ export function DetailedPricing({ initialData, isLoggedIn = false }: { initialDa
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-[2rem] border bg-card hover:bg-secondary/20 transition-all group"
+                className="p-8 rounded-2xl border bg-card hover:bg-secondary/20 transition-all group"
               >
                 <h4 className="text-lg font-bold mb-3 flex items-center justify-between">
                   {faq.q}

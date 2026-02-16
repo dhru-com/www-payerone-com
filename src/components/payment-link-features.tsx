@@ -40,7 +40,7 @@ export function PaymentLinkFeatures() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-12 md:mb-20 text-center md:text-left mx-auto md:mx-0">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
             The Simplest Way to <br />
             <span className="text-primary italic">Accept Web3 Payments.</span>
@@ -58,7 +58,7 @@ export function PaymentLinkFeatures() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-8 rounded-[2rem] border bg-card hover:bg-secondary/30 transition-all duration-300"
+              className="group p-8 rounded-2xl border bg-card hover:bg-secondary/30 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                 {feature.icon}

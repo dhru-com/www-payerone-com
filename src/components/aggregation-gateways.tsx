@@ -32,7 +32,7 @@ export function AggregationGateways() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group p-8 rounded-[2rem] border bg-card hover:bg-secondary/30 transition-all duration-300 flex flex-col items-center text-center"
+              className="group p-8 rounded-2xl border bg-card hover:bg-secondary/30 transition-all duration-300 flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 md:w-20 md:h-20 relative mb-6 flex items-center justify-center">
                 <Image
@@ -54,7 +54,7 @@ export function AggregationGateways() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="p-8 rounded-[2rem] border bg-primary text-primary-foreground flex flex-col items-center justify-center text-center group hover:scale-105 transition-all shadow-xl shadow-primary/20"
+            className="p-8 rounded-2xl border bg-primary text-primary-foreground flex flex-col items-center justify-center text-center group hover:scale-105 transition-all shadow-xl shadow-primary/20"
           >
             <div className="text-3xl font-bold mb-2">1,000+</div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-4 opacity-80">Local Providers</h3>
@@ -71,7 +71,7 @@ export function AggregationGateways() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.25 }}
-            className="p-8 rounded-[2rem] border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer"
+            className="p-8 rounded-2xl border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer"
           >
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
               <Plus className="h-8 w-8" />

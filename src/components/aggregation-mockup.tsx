@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Zap } from "lucide-react"
 
 export function AggregationMockup() {
   const gateways = [
@@ -22,15 +23,15 @@ export function AggregationMockup() {
 
       {/* Central Node (PayerOne) */}
       <motion.div
-        className="relative z-20 w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-black flex items-center justify-center shadow-2xl border border-white/10"
+        className="relative z-20 w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-black flex items-center justify-center shadow-2xl border border-white/10"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", damping: 15, stiffness: 200 }}
       >
-        <div className="relative w-12 h-12 md:w-16 md:h-16">
-          <Image src="/logo.svg" alt="PayerOne" fill className="object-contain" />
+        <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+          <Zap className="w-10 h-10 md:w-12 md:h-12 text-white" />
         </div>
-        <div className="absolute -inset-4 bg-primary/20 rounded-[2.5rem] blur-2xl -z-10 animate-pulse" />
+        <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl -z-10 animate-pulse" />
       </motion.div>
 
       {/* Gateway Nodes */}
@@ -43,7 +44,7 @@ export function AggregationMockup() {
         return (
           <motion.div
             key={gateway.name}
-            className="absolute z-10 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border shadow-lg flex items-center justify-center p-3 md:p-4 group cursor-pointer"
+            className="absolute z-10 w-16 h-16 md:w-20 md:h-20 rounded-xl bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-lg flex items-center justify-center p-3 md:p-4 group cursor-pointer"
             initial={{ opacity: 0, x: 0, y: 0 }}
             animate={{ opacity: 1, x, y }}
             transition={{ delay: i * 0.1 + 0.5, duration: 0.8 }}
@@ -54,7 +55,7 @@ export function AggregationMockup() {
                 src={gateway.logo}
                 alt={gateway.name}
                 fill
-                className="object-contain grayscale group-hover:grayscale-0 transition-all"
+                className="object-contain grayscale group-hover:grayscale-0 transition-all dark:invert dark:brightness-0 dark:group-hover:invert-0 dark:group-hover:brightness-100"
               />
             </div>
 

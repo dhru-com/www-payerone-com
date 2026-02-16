@@ -18,21 +18,21 @@ export function Comparison() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
           {/* PayerOne Column */}
-          <div className="relative p-10 rounded-[2.5rem] border border-primary/50 bg-zinc-900/50 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col group hover:border-primary transition-colors duration-500">
+          <div className="relative p-10 rounded-2xl border border-primary/50 bg-zinc-900/50 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col group hover:border-primary transition-colors duration-500">
             <div className="absolute top-0 right-0 p-8">
                <span className="bg-primary text-primary-foreground text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
                  Recommended
                </span>
             </div>
-            
+
             {/* Background Glow Effect */}
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-colors" />
-            
+
             <h3 className="text-3xl font-bold mb-10 flex items-center gap-3 text-white">
               <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.6)]" />
               PayerOne
             </h3>
-            
+
             <ul className="space-y-6 flex-grow">
               <li className="flex items-start gap-4">
                 <div className="mt-1.5 bg-green-500/10 p-1.5 rounded-full flex-shrink-0">
@@ -79,7 +79,7 @@ export function Comparison() {
           </div>
 
           {/* Traditional Payments Column */}
-          <div className="p-10 rounded-[2.5rem] border border-zinc-800 bg-zinc-900/20 flex flex-col justify-center">
+          <div className="p-10 rounded-2xl border border-zinc-800 bg-zinc-900/20 flex flex-col justify-center">
             <h3 className="text-2xl font-bold mb-10 flex items-center gap-3 text-zinc-500">
               <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
               Traditional Payments

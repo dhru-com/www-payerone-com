@@ -70,8 +70,8 @@ export default async function SubscriptionsPage() {
               </ul>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/5 rounded-[3rem] blur-3xl -z-10" />
-              <div className="rounded-[3rem] border bg-card p-12 shadow-2xl relative">
+              <div className="absolute inset-0 bg-primary/5 rounded-3xl blur-3xl -z-10" />
+              <div className="rounded-2xl border bg-card p-12 shadow-2xl relative">
                  <div className="space-y-8">
                     <div className="flex justify-between items-center border-b pb-8">
                        <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Lifecycle Engine</span>

@@ -27,15 +27,15 @@ export default async function PaymentLinksPage() {
             Whether you&apos;re selling digital art, collecting donations, or billing for services, PayerOne Payment Links give you a professional presence in seconds.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <div className="p-8 rounded-3xl bg-background border shadow-sm">
+            <div className="p-8 rounded-2xl bg-background border shadow-sm">
                <div className="text-primary font-bold text-3xl mb-2">0%</div>
                <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Variable Fees</div>
             </div>
-            <div className="p-8 rounded-3xl bg-background border shadow-sm">
+            <div className="p-8 rounded-2xl bg-background border shadow-sm">
                <div className="text-primary font-bold text-3xl mb-2">Instant</div>
                <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Settlement</div>
             </div>
-            <div className="p-8 rounded-3xl bg-background border shadow-sm">
+            <div className="p-8 rounded-2xl bg-background border shadow-sm">
                <div className="text-primary font-bold text-3xl mb-2">Global</div>
                <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Accessibility</div>
             </div>

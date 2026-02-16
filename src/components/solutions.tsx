@@ -38,7 +38,7 @@ export function Solutions() {
         <div className="flex justify-center mb-6">
           <span className="px-4 py-1.5 text-[10px] font-bold text-primary bg-primary/10 rounded-full uppercase tracking-[0.2em] flex items-center gap-2">
             <span className="w-4 h-[1px] bg-primary/30" />
-            03 Industry
+            04 Industry
             <span className="w-4 h-[1px] bg-primary/30" />
           </span>
         </div>
@@ -70,9 +70,9 @@ export function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-8 rounded-[2rem] border bg-card hover:bg-secondary/30 hover:shadow-xl transition-all duration-300"
+              className="group p-8 rounded-2xl border bg-card hover:bg-secondary/30 hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                 {solution.icon}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-4">{solution.title}</h3>
@@ -94,7 +94,7 @@ export function Solutions() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="p-8 rounded-[2rem] border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer"
+            className="p-8 rounded-2xl border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer"
           >
             <h3 className="text-xl font-bold text-foreground mb-4">Custom Solution?</h3>
             <p className="text-muted-foreground text-sm mb-6">

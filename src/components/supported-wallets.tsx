@@ -56,13 +56,13 @@ export function SupportedWallets() {
                   transition={{ delay: i * 0.05 }}
                   className="group flex flex-col items-center gap-3"
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border shadow-sm flex items-center justify-center p-4 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-sm flex items-center justify-center p-4 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
                     <Image
                       src={wallet.logo}
                       alt={wallet.name}
                       width={48}
                       height={48}
-                      className="object-contain grayscale group-hover:grayscale-0 transition-all"
+                      className="object-contain grayscale group-hover:grayscale-0 transition-all dark:invert dark:brightness-0 dark:group-hover:invert-0 dark:group-hover:brightness-100"
                     />
                   </div>
                   <span className="text-[10px] md:text-xs font-bold text-zinc-500 group-hover:text-foreground transition-colors">{wallet.name}</span>
@@ -83,16 +83,16 @@ export function SupportedWallets() {
                   transition={{ delay: i * 0.05 }}
                   className="flex flex-col items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
                 >
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border shadow-sm flex items-center justify-center p-3">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-sm flex items-center justify-center p-3">
                     <Image
                       src={network.logo}
                       alt={network.name}
                       width={32}
                       height={32}
-                      className="object-contain"
+                      className="object-contain dark:invert dark:brightness-0 hover:dark:invert-0 hover:dark:brightness-100 transition-all"
                     />
                   </div>
-                  <span className="text-[10px] font-bold text-zinc-400">{network.name}</span>
+                  <span className="text-[10px] md:text-xs font-bold text-zinc-400 dark:text-zinc-500">{network.name}</span>
                 </motion.div>
               ))}
             </div>

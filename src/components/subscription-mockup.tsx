@@ -23,13 +23,13 @@ export function SubscriptionMockup() {
   ]
 
   return (
-    <div className="w-full max-w-5xl mx-auto rounded-[2.5rem] border bg-white shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px] text-foreground">
+    <div className="w-full max-w-5xl mx-auto rounded-2xl border dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px] text-foreground">
       {/* Sidebar / Overview */}
-      <div className="w-full md:w-[320px] bg-zinc-50 border-r p-8 flex flex-col gap-8">
+      <div className="w-full md:w-[320px] bg-zinc-50 dark:bg-zinc-900 border-r dark:border-zinc-800 p-8 flex flex-col gap-8">
         <div>
           <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] mb-6">Subscription Overview</h3>
           <div className="space-y-4">
-            <div className="p-4 rounded-2xl bg-white border shadow-sm">
+            <div className="p-4 rounded-xl bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-sm">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-medium text-muted-foreground">Monthly Recurring Revenue</span>
                 <TrendingUp className="h-4 w-4 text-green-500" />
@@ -38,7 +38,7 @@ export function SubscriptionMockup() {
               <div className="text-[10px] font-bold text-green-600 mt-1 uppercase tracking-wider">+12.5% from last month</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white border shadow-sm">
+            <div className="p-4 rounded-xl bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-sm">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-medium text-muted-foreground">Active Subscriptions</span>
                 <Users className="h-4 w-4 text-primary" />
@@ -56,7 +56,7 @@ export function SubscriptionMockup() {
               { event: "Renewals (42)", date: "Feb 16", type: "renewal" },
               { event: "Trial Expirations (12)", date: "Feb 18", type: "trial" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white border text-[11px] font-medium">
+              <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-zinc-800 border dark:border-zinc-700 text-[11px] font-medium">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-3.5 w-3.5 text-zinc-400" />
                   <span>{item.event}</span>
@@ -68,7 +68,7 @@ export function SubscriptionMockup() {
         </div>
 
         <div className="mt-auto pt-6 border-t">
-          <div className="flex items-center gap-3 p-3 rounded-2xl bg-primary/5 border border-primary/10">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10">
             <RefreshCw className="h-5 w-5 text-primary animate-spin-slow" />
             <div>
               <div className="text-[10px] font-bold text-primary uppercase tracking-widest leading-none">Smart Retries</div>
@@ -79,7 +79,7 @@ export function SubscriptionMockup() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-grow p-8 md:p-12 bg-white flex flex-col gap-10">
+      <div className="flex-grow p-8 md:p-12 bg-white dark:bg-zinc-950 flex flex-col gap-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
             <h2 className="text-3xl font-bold tracking-tight mb-2">Subscriber Management</h2>
@@ -88,7 +88,7 @@ export function SubscriptionMockup() {
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-zinc-100 flex items-center justify-center text-[10px] font-bold">
+                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-700 flex items-center justify-center text-[10px] font-bold">
                   {i}
                 </div>
               ))}
@@ -98,16 +98,16 @@ export function SubscriptionMockup() {
         </div>
 
         {/* Subscription Table */}
-        <div className="rounded-[2rem] border overflow-hidden shadow-sm">
-          <div className="bg-zinc-50 px-6 py-4 border-b flex items-center justify-between">
+        <div className="rounded-xl border dark:border-zinc-800 overflow-hidden shadow-sm">
+          <div className="bg-zinc-50 dark:bg-zinc-900 px-6 py-4 border-b dark:border-zinc-800 flex items-center justify-between">
             <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em]">Customer & Plan</span>
             <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em]">Status & Revenue</span>
           </div>
-          <div className="divide-y">
+          <div className="divide-y dark:divide-zinc-800">
             {subscribers.map((sub, i) => (
-              <div key={i} className="px-6 py-5 flex items-center justify-between hover:bg-zinc-50/50 transition-colors">
+              <div key={i} className="px-6 py-5 flex items-center justify-between hover:bg-zinc-50/50 dark:hover:bg-zinc-900 transition-colors">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center text-xs font-bold text-zinc-500 border">
+                  <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-500 dark:text-zinc-400 border dark:border-zinc-700">
                     {sub.icon}
                   </div>
                   <div>
@@ -138,22 +138,22 @@ export function SubscriptionMockup() {
 
         {/* Bottom Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-auto">
-          <div className="p-6 rounded-3xl border bg-zinc-50 flex items-center gap-6 group cursor-pointer hover:bg-white transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+          <div className="p-6 rounded-xl border dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 flex items-center gap-6 group cursor-pointer hover:bg-white dark:hover:bg-zinc-800 transition-all">
+            <div className="w-12 h-12 rounded-lg bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
               <CreditCard className="h-6 w-6" />
             </div>
             <div>
               <h4 className="font-bold text-sm">Multi-Asset Support</h4>
-              <p className="text-[11px] text-zinc-400 font-medium">Auto-collect in USDT, USDC, or Fiat.</p>
+              <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">Auto-collect in USDT, USDC, or Fiat.</p>
             </div>
           </div>
-          <div className="p-6 rounded-3xl border bg-zinc-50 flex items-center gap-6 group cursor-pointer hover:bg-white transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+          <div className="p-6 rounded-xl border dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 flex items-center gap-6 group cursor-pointer hover:bg-white dark:hover:bg-zinc-800 transition-all">
+            <div className="w-12 h-12 rounded-lg bg-white dark:bg-zinc-800 shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
               <RefreshCw className="h-6 w-6" />
             </div>
             <div>
               <h4 className="font-bold text-sm">Churn Recovery</h4>
-              <p className="text-[11px] text-zinc-400 font-medium">Smart retry logic for failed payments.</p>
+              <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">Smart retry logic for failed payments.</p>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ export function PaymentLinkHero({ isLoggedIn = false }: { isLoggedIn?: boolean }
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="flex flex-col items-start text-left max-w-2xl">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-2xl mx-auto lg:mx-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

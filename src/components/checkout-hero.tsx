@@ -62,7 +62,7 @@ export function CheckoutHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative"
+          className="relative scale-[0.85] md:scale-100 origin-top lg:-mt-12"
         >
            {/* Background Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-[120px] -z-10" />

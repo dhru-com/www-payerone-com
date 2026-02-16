@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Toaster } from "sonner";
 import { isAuthenticated } from "@/lib/auth";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,11 +85,18 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster position="top-center" richColors />
-        <Navbar isLoggedIn={isLoggedIn} />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsent />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Toaster position="top-center" richColors />
+          <Navbar isLoggedIn={isLoggedIn} />
+          <main>{children}</main>
+          <Footer />
+          <CookieConsent />
+        </ThemeProvider>
       </body>
     </html>
   );

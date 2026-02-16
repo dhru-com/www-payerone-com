@@ -3,6 +3,7 @@ import { Trust } from "@/components/trust"
 import { Features } from "@/components/features"
 import { Comparison } from "@/components/comparison"
 import { Scale } from "@/components/scale"
+import { GlobalNetwork } from "@/components/global-network"
 import { Integration } from "@/components/integration"
 import { Solutions } from "@/components/solutions"
 import { Plugins } from "@/components/plugins"
@@ -25,6 +26,7 @@ export default async function Home() {
       <Comparison />
       <Features />
       <Scale />
+      <GlobalNetwork />
       <Solutions />
       <Plugins />
       <Integration />

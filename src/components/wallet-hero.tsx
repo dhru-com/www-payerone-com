@@ -13,8 +13,8 @@ export function WalletHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
-          <div className="flex flex-col items-start text-left max-w-2xl">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-2xl mx-auto lg:mx-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export function WalletHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -65,7 +65,7 @@ export function WalletHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
             </motion.div>
 
             <motion.div
-              className="mt-12 p-6 rounded-3xl bg-secondary/50 border backdrop-blur-sm space-y-4 max-w-md"
+              className="mt-12 p-6 rounded-2xl bg-secondary/50 border backdrop-blur-sm space-y-4 max-w-md w-full"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -87,7 +87,7 @@ export function WalletHero({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex-shrink-0"
+            className="relative flex-shrink-0 scale-[0.9] md:scale-100 origin-top lg:origin-center"
           >
              {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-[120px] -z-10" />
