@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
-import { ArrowRight, Calendar, User, Clock, BookOpen } from "lucide-react"
+import { ArrowRight, Calendar, Clock, BookOpen } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
@@ -124,10 +124,10 @@ export function BlogSection() {
                 {post.image ? (
                   <CardHeader className="p-0">
                     <div className="h-48 w-full bg-muted relative overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4">
                         <Badge variant="secondary" className="bg-background/80 backdrop-blur-md font-bold uppercase tracking-widest text-[10px]">

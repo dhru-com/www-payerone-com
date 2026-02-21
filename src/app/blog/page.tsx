@@ -56,6 +56,9 @@ async function getBlogPosts(): Promise<BlogPost[]> {
 export default async function BlogPage() {
   const posts = await getBlogPosts()
   const isAdmin = await checkIsAdmin()
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now()
+  const oneDayAgo = now - 24 * 60 * 60 * 1000
 
   return (
     <div className="flex flex-col min-h-screen pt-20">
@@ -93,17 +96,17 @@ export default async function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.length > 0 ? (
               posts.map((post) => {
-                const isNew = new Date(post.created_at.replace(' ', 'T')) >= new Date(Date.now() - 24 * 60 * 60 * 1000)
+                const isNew = new Date(post.created_at.replace(' ', 'T')).getTime() >= oneDayAgo
 
                 return (
                   <Card key={post.id} className="h-full flex flex-col rounded-3xl border bg-card/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 group overflow-hidden">
                     {post.image ? (
                       <CardHeader className="p-0">
                         <div className="h-48 w-full bg-muted relative overflow-hidden">
-                          <img 
-                            src={post.image} 
-                            alt={post.title} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           />
                           {isNew && (
                             <div className="absolute top-4 left-4">
@@ -135,7 +138,7 @@ export default async function BlogPage() {
                         </div>
                         {isAdmin && (
                           <div className="ml-auto">
-                            <BlogAdminActions uuid={post.uuid} slug={post.slug} title={post.title} variant="inline" />
+                            <BlogAdminActions slug={post.slug} title={post.title} variant="inline" />
                           </div>
                         )}
                       </div>

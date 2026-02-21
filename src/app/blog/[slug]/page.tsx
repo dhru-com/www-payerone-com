@@ -137,7 +137,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
             />
 
             {isAdmin && (
-              <BlogAdminActions uuid={post.uuid} slug={post.slug} title={post.title} />
+              <BlogAdminActions slug={post.slug} title={post.title} />
             )}
           </div>
         </div>

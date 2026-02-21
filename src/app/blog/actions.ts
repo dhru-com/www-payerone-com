@@ -28,9 +28,9 @@ export async function createBlogPost(data: { title: string; content: string; sta
   revalidatePath("/blog/[slug]", "layout");
   if (result.data?.slug) {
     revalidatePath(`/blog/${result.data.slug}`);
-    revalidateTag(`blog-post-${result.data.slug}`);
+    revalidateTag(`blog-post-${result.data.slug}`, "default");
   }
-  revalidateTag("blog-posts");
+  revalidateTag("blog-posts", "default");
   return result;
 }
 
@@ -59,9 +59,9 @@ export async function updateBlogPost(id: number, data: { title: string; content:
   revalidatePath("/blog/[slug]", "layout");
   if (result.data?.slug) {
     revalidatePath(`/blog/${result.data.slug}`);
-    revalidateTag(`blog-post-${result.data.slug}`);
+    revalidateTag(`blog-post-${result.data.slug}`, "default");
   }
-  revalidateTag("blog-posts");
+  revalidateTag("blog-posts", "default");
   return result;
 }
 
@@ -88,6 +88,6 @@ export async function deleteBlogPost(slug: string) {
   const result = await res.json();
   revalidatePath("/blog");
   revalidatePath("/blog/[slug]", "layout");
-  revalidateTag("blog-posts");
+  revalidateTag("blog-posts", "default");
   return result;
 }

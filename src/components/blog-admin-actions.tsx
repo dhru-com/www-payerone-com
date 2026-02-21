@@ -18,13 +18,12 @@ import {
 } from "@/components/ui/dialog"
 
 interface BlogAdminActionsProps {
-  uuid: string
   slug: string
   title: string
   variant?: "inline" | "full"
 }
 
-export function BlogAdminActions({ uuid, slug, title, variant = "full" }: BlogAdminActionsProps) {
+export function BlogAdminActions({ slug, title, variant = "full" }: BlogAdminActionsProps) {
   const router = useRouter()
   const [isDeleting, setIsDeleting] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
@@ -37,9 +36,9 @@ export function BlogAdminActions({ uuid, slug, title, variant = "full" }: BlogAd
       setIsOpen(false)
       router.push("/blog")
       router.refresh()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Delete Error:", error)
-      toast.error(error.message || "Failed to delete blog post")
+      toast.error(error instanceof Error ? error.message : "Failed to delete blog post")
     } finally {
       setIsDeleting(false)
     }
@@ -63,7 +62,7 @@ export function BlogAdminActions({ uuid, slug, title, variant = "full" }: BlogAd
             <DialogHeader>
               <DialogTitle className="text-xl font-bold">Delete Blog Post</DialogTitle>
               <DialogDescription className="text-base pt-2">
-                Are you sure you want to delete <span className="font-bold text-foreground">"{title}"</span>? This action cannot be undone.
+                Are you sure you want to delete <span className="font-bold text-foreground">&quot;{title}&quot;</span>? This action cannot be undone.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter className="pt-6 gap-2 sm:gap-0">
@@ -104,7 +103,7 @@ export function BlogAdminActions({ uuid, slug, title, variant = "full" }: BlogAd
             </div>
             <DialogTitle className="text-2xl font-bold tracking-tight">Delete Post?</DialogTitle>
             <DialogDescription className="text-lg leading-relaxed">
-              Are you sure you want to delete <span className="font-bold text-foreground">"{title}"</span>? This will permanently remove the post from the blog.
+              Are you sure you want to delete <span className="font-bold text-foreground">&quot;{title}&quot;</span>? This will permanently remove the post from the blog.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="pt-8 flex flex-col sm:flex-row gap-3">

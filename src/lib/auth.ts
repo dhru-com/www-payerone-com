@@ -41,7 +41,7 @@ export async function getAuthProfile() {
 
     const json = await res.json();
     return json.data?.user || null;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -51,7 +51,7 @@ export async function isLocalhost() {
     const headersList = await headers();
     const host = headersList.get("host") || "";
     return host.includes("localhost") || host.includes("127.0.0.1");
-  } catch (error) {
+  } catch {
     return false;
   }
 }

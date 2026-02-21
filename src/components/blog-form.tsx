@@ -60,9 +60,9 @@ export function BlogForm({ post }: BlogFormProps) {
       }
       router.push("/blog")
       router.refresh()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Blog Save Error:", error)
-      toast.error(error.message || "An error occurred while saving the post")
+      toast.error(error instanceof Error ? error.message : "An error occurred while saving the post")
     } finally {
       setIsSubmitting(false)
     }
