@@ -164,6 +164,13 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-base font-medium")}>
+                  <Link href="/blog">
+                    Blog
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -243,6 +250,13 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
                   onClick={() => setIsOpen(false)}
                 >
                   Developers
+                </Link>
+                <Link
+                  href="/blog"
+                  className="block text-lg font-bold hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Blog
                 </Link>
               </div>
 

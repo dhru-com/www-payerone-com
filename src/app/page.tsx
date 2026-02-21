@@ -7,6 +7,7 @@ import { GlobalNetwork } from "@/components/global-network"
 import { Integration } from "@/components/integration"
 import { Solutions } from "@/components/solutions"
 import { Plugins } from "@/components/plugins"
+import { BlogSection } from "@/components/blog-section"
 import { CTA } from "@/components/cta"
 import { Metadata } from "next"
 import { isAuthenticated } from "@/lib/auth"
@@ -30,6 +31,7 @@ export default async function Home() {
       <Solutions />
       <Plugins />
       <Integration />
+      <BlogSection />
       <CTA isLoggedIn={isLoggedIn} />
     </div>
   )

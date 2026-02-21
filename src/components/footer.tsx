@@ -19,6 +19,7 @@ const footerLinks = {
     { name: "Status", href: "/status" },
   ],
   company: [
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "https://www.dhru.com" },
     { name: "Careers", href: "https://account.dhru.com/contact-us" },
     { name: "Contact", href: "https://account.dhru.com/contact-us" },
